@@ -2,9 +2,18 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react'; // Import the React plugin
 import tailwindcss from 'tailwindcss'; // Import tailwindcss statically
 import autoprefixer from 'autoprefixer'; // Import autoprefixer statically
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react()],  // Use the React plugin to enable React support
+  build: {
+    rollupOptions: {
+      input: {
+        main: '/src/index.html', 
+      },
+    },
+  },
+});
+
 
   optimizeDeps: {
     include: ['tailwindcss'],  // Include tailwindcss in the dependency optimization
