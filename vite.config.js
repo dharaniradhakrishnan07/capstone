@@ -4,6 +4,10 @@ import react from '@vitejs/plugin-react'; // Import the React plugin
 export default defineConfig({
   plugins: [react()],  // Use the React plugin to enable React support
 
+  optimizeDeps: {
+    include: ['tailwindcss'],  // Include tailwindcss in the dependency optimization
+  },
+
   server: {
     port: 3000,           // Set the port for the development server
     open: true,           // Automatically open the browser when the server starts
@@ -25,11 +29,7 @@ export default defineConfig({
       '@assets': '/src/assets',          // Another example alias for assets folder
     },
   },
-export default {
-  optimizeDeps: {
-    include: ['tailwindcss']
-  }
-}
+
   css: {
     // Optional: Add support for PostCSS or Tailwind CSS if you're using them
     postcss: {
