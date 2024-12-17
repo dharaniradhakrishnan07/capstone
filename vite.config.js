@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: 'frontend\public\index.html',
+        main: 'E:\capstone\Hostel management project\hostel\frontend\public\index.html',
       },
     },
     outDir: 'build',
