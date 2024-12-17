@@ -1,48 +1,45 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react'; // Import the React plugin
-import tailwindcss from 'tailwindcss'; // Import tailwindcss statically
-import autoprefixer from 'autoprefixer'; // Import autoprefixer statically
-
+import react from '@vitejs/plugin-react';
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
+  plugins: [react()],
+
   build: {
     rollupOptions: {
       input: {
-        main: '/src/index.html', 
+        main: '/src/index.html',
       },
     },
+    outDir: 'build',
+    sourcemap: true,
+    minify: 'esbuild',
+    chunkSizeWarningLimit: 500,
   },
 
-
-
   optimizeDeps: {
-    include: ['tailwindcss'], 
+    include: ['tailwindcss'],
   },
 
   server: {
-    port: 3000,           
-    open: true,           
-    proxy: {            
-      '/api': 'http://localhost:5000',  
+    port: 3000,
+    open: true,
+    proxy: {
+      '/api': 'http://localhost:5000',
     },
-  },
-
-  build: {
-    outDir: 'build',     
-    sourcemap: true,      
-    minify: 'esbuild',   
-    chunkSizeWarningLimit: 500, 
   },
 
   resolve: {
     alias: {
-      '@components': '/src/components',  
-      '@assets': '/src/assets',          
+      '@components': '/src/components',
+      '@assets': '/src/assets',
     },
   },
 
   css: {
     postcss: {
-      plugins: [tailwindcss, autoprefixer],  
+      plugins: [tailwindcss, autoprefixer],
+    },
   },
 });
