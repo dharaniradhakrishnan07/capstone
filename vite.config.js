@@ -12,7 +12,7 @@ export default defineConfig({
         main: 'frontend/public/index.html',
       },
     },
-    outDir: 'build',
+   outDir: 'dist', 
     sourcemap: true,
     minify: 'esbuild',
     chunkSizeWarningLimit: 500,
