@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: '/src/index.html',
+        main: 'frontend\public\index.html',
       },
     },
     outDir: 'build',
