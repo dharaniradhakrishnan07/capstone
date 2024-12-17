@@ -28,8 +28,8 @@ export default defineConfig({
 export default {
   optimizeDeps: {
     include: ['tailwindcss']
-  },
-},
+  }
+}
   css: {
     // Optional: Add support for PostCSS or Tailwind CSS if you're using them
     postcss: {
