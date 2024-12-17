@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react'; // Import the React plugin
+import tailwindcss from 'tailwindcss'; // Import tailwindcss statically
+import autoprefixer from 'autoprefixer'; // Import autoprefixer statically
 
 export default defineConfig({
   plugins: [react()],  // Use the React plugin to enable React support
@@ -31,9 +33,8 @@ export default defineConfig({
   },
 
   css: {
-    // Optional: Add support for PostCSS or Tailwind CSS if you're using them
     postcss: {
-      plugins: [require('tailwindcss'), require('autoprefixer')],  // Example with TailwindCSS
+      plugins: [tailwindcss, autoprefixer],  // Use tailwindcss and autoprefixer statically
     },
   },
 });
