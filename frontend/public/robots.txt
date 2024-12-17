@@ -1,0 +1,7 @@
+# Allow all crawlers to access everything
+User-agent: *
+Disallow: /private/
+
+# Allow Googlebot full access
+User-agent: Googlebot
+Disallow: /restricted/
