@@ -25,7 +25,11 @@ export default defineConfig({
       '@assets': '/src/assets',          // Another example alias for assets folder
     },
   },
-
+export default {
+  optimizeDeps: {
+    include: ['tailwindcss']
+  },
+},
   css: {
     // Optional: Add support for PostCSS or Tailwind CSS if you're using them
     postcss: {
